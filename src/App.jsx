@@ -1,5 +1,6 @@
 
 import './App.css'
+import Card from './components/Card'
 import Heading from './components/Heading'
 
 function App() {
@@ -9,6 +10,16 @@ function App() {
     <>
 
     <Heading />
+    <div className='main-container'> 
+      <Card></Card>
+      <Card></Card>
+      <Card></Card> 
+      <Card></Card>
+      <Card></Card>
+      <Card></Card> 
+      
+    </div>
+    
     
     </>
   )
