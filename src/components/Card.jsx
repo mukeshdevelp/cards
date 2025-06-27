@@ -1,38 +1,37 @@
-const Card = ({props}) => {
+import '../App.css';
+const Card = ({ props }) => {
+  console.log(props);
 
-    console.log(props);
-    
-    
-        return (
-        <>
-            <div className="card-container">
-                <div className="image-container">
-                    <img src={props.imgSrc} alt="" className="image" />
-                </div>
-                <div>
-                    
-                </div>
-                <div className="text">
-                    <div className="title-card">
-        
-                    <h3>{props.companyName}</h3>
+  return (
+    <>
+      <div className="card-container">
+        {props.map((item) => (
 
-                </div>
-                <div className="heading-card">
-                    <h2>{props.blogTitle}</h2>
-                </div>
-                <div>
-                    <p>{props.content}</p>
-                </div>
-                </div>
-                
+          
+          <div key={item.id} className="card-item">
+            <div className="image-container">
+              <img
+                src={item.imgSrc}
+                alt="alternate image"
+                className="image"
+              />
             </div>
-
-
-           
-        </>
-    )
-}
-
+            <div className="text">
+              <div className="title-card">
+                <h3>{item.companyName}</h3>
+              </div>
+              <div className="heading-card">
+                <h2>{item.blogTitle}</h2>
+              </div>
+              <div>
+                <p>{item.content}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
 
 export default Card;
